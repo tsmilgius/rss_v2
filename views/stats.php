@@ -3,7 +3,6 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-
 if(isset($_SESSION['user_session'])):
     ?>
     <h4> Top 10 channels </h4> <?php

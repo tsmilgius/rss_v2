@@ -12,24 +12,22 @@ $_COOKIE['visit_duration'] = 1;
 $visit_time = date("Y-m-d H:i:s");
 setcookie('visit_duration', $visit_time, time()+3600*24*10);
 
- error_reporting(E_ALL);
+error_reporting(E_ALL);
 
- /*** define the site path ***/
- $site_path = realpath(dirname(__FILE__));
- define ('__SITE_PATH', $site_path);
 
- /*** include the init.php file ***/
- include 'includes/init.php';
+$site_path = realpath(dirname(__FILE__));
+define ('__SITE_PATH', $site_path);
 
- /*** load the router ***/
- $registry->router = new router($registry);
+include 'includes/init.php';
 
- /*** set the controller path ***/
- $registry->router->setPath (__SITE_PATH . '/controller');
 
- /*** load up the template ***/
- $registry->template = new template($registry);
+$registry->router = new router($registry);
 
- /*** load the controller ***/
- $registry->router->loader();
 
+$registry->router->setPath (__SITE_PATH . '/controller');
+
+
+$registry->template = new template($registry);
+
+
+$registry->router->loader();

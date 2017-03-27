@@ -1,10 +1,6 @@
 <?php
-//require_once __DIR__ . '../../model/rssfeed.class.php';
 if(!isset($_SESSION))
     session_start();
-if(isset($_SESSION['url'])):
-//    $rsscontent = new RssFeed($_SESSION['url']);
-
 ?>
 
 <h2><?= $rsscontent->getChannel();?></h2>
